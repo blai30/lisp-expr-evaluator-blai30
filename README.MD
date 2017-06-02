@@ -9,7 +9,7 @@ Due Date: TBD
 - Use PJ2_Test.java to test correctness of your program
 
 - Compile programs (you are in directory containing Readme file):
-	
+    
   javac PJ2/*.java
   javac *.java
 
