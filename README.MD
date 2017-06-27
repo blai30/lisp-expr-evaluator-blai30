@@ -1,11 +1,11 @@
 CSC220 Programming Project #2
 =============================
  
-Due Date: Friday, July 7th, 2017 @ midnight
-	  Sunday, July 9th, 2017 @ midnight
+-Due Date: Friday, July 7th, 2017 @ midnight
+-	  Sunday, July 9th, 2017 @ midnight
 
-Name       : 
-Student ID : 
+-Name       : 
+-Student ID : 
 
 
 - You need to implement LispExpressionEvaluator.java which uses Java API Stack
