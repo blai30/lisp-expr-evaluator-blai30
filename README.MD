@@ -5,8 +5,8 @@ CSC220 Programming Project #2
 - Friday, July 7th, 2017 @ midnight
 -	Sunday, July 9th, 2017 @ midnight
 
-- Name       : 
-- Student ID : 
+- Name       : Brian Lai
+- Student ID : 916818167
 
 
 - You need to implement LispExpressionEvaluator.java which uses Java API Stack
