@@ -2,8 +2,7 @@
  *
  *  		CSC220 Programming Project#2
  *  
- * Due Date: 23:55pm, Wednesday, 4/5/2017 
- *           Upload LispExpressionEvaluator.java to ilearn 
+ * 
  *
  * Specification: 
  *
