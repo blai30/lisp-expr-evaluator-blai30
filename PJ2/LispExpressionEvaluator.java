@@ -100,7 +100,6 @@ public class LispExpressionEvaluator
         if (inputExpression == null) {
             throw new LispExpressionEvaluatorException();
         }
-        
         this.inputExpr = inputExpression;
         this.inputExprStack = new Stack<>();
         this.evaluationStack = new Stack<>();
@@ -111,6 +110,9 @@ public class LispExpressionEvaluator
     public void reset(String inputExpression) 
     {
 	// add statements
+        this.inputExpr = inputExpression;
+        this.inputExprStack = null;
+        this.evaluationStack = null;
     }
 
 
