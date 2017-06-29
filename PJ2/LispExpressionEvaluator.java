@@ -97,6 +97,9 @@ public class LispExpressionEvaluator
     public LispExpressionEvaluator(String inputExpression) 
     {
 	// add statements
+        this.inputExpr = inputExpression;
+        this.inputExprStack = new Stack<>();
+        this.evaluationStack = new Stack<>();
     }
 
     // set inputExpr to inputExpression 
