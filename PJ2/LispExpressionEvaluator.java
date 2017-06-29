@@ -111,8 +111,8 @@ public class LispExpressionEvaluator
     {
 	// add statements
         this.inputExpr = inputExpression;
-        this.inputExprStack = null;
-        this.evaluationStack = null;
+        this.inputExprStack.clear();
+        this.evaluationStack.clear();
     }
 
 
