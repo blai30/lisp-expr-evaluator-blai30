@@ -86,6 +86,9 @@ public class LispExpressionEvaluator
     public LispExpressionEvaluator()
     {
 	// add statements
+        this.inputExpr = "";
+        this.inputExprStack = new Stack<>();
+        this.evaluationStack = new Stack<>();
     }
 
     // constructor with an input expression 
