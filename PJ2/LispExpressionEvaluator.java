@@ -43,7 +43,7 @@
  * - Design and implement an algorithm that uses Java API stacks to evaluate a 
  *   valid Lisp expression composed of the four basic operators and integer values. 
  * - Valid tokens in an expression are '(',')','+','-','*','/',and positive integers (>=0)
- * - Display result as floting point number with at 2 decimal places
+ * - Display result as floating point number with at 2 decimal places
  * - Negative number is not a valid "input" operand, e.g. (+ -2 3) 
  *   However, you may create a negative number using parentheses, e.g. (+ (-2)3)
  * - There may be any number of blank spaces, >= 0, in between tokens
