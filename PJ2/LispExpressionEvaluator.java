@@ -128,6 +128,10 @@ public class LispExpressionEvaluator
     private void evaluateCurrentOperation()
     {
 	// add statements
+        if (inputExprStack.empty()) {
+            throw new LispExpressionEvaluatorException("Input expression is empty");
+        }
+        
     }
 
     /**
