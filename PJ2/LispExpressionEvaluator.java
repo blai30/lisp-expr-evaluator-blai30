@@ -97,6 +97,10 @@ public class LispExpressionEvaluator
     public LispExpressionEvaluator(String inputExpression) 
     {
 	// add statements
+        if (inputExpression == null) {
+            throw new LispExpressionEvaluatorException();
+        }
+        
         this.inputExpr = inputExpression;
         this.inputExprStack = new Stack<>();
         this.evaluationStack = new Stack<>();
