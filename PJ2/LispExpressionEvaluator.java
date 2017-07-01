@@ -177,7 +177,7 @@ public class LispExpressionEvaluator {
         } else {
             double num1 = evaluationStack.pop();
             double num2 = evaluationStack.pop();
-            return num2 - num1;
+            return num1 - num2;
         }
     }
 
