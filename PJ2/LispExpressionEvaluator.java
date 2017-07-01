@@ -271,6 +271,7 @@ public class LispExpressionEvaluator {
                         } catch (EmptyStackException e) {
                             break;
                         }
+                        break;
                     default:  // error
                         throw new LispExpressionEvaluatorException(item + " is not a legal expression operator");
                 } // end switch
