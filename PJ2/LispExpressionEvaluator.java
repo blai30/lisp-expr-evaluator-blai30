@@ -146,9 +146,16 @@ public class LispExpressionEvaluator {
     }
 
     private double add() {
-        double num1 = this.evaluationStack.pop();
-        double num2 = this.evaluationStack.pop();
-        return num1 + num2;
+        double num1;
+        double num2;
+        if (this.evaluationStack.size() == 1) {
+            num1 = this.evaluationStack.pop();
+            return num1;
+        } else {
+            num1 = this.evaluationStack.pop();
+            num2 = this.evaluationStack.pop();
+            return num1 + num2;
+        }
     }
 
     private double subtract() {
@@ -162,9 +169,16 @@ public class LispExpressionEvaluator {
     }
 
     private double multiply() {
-        double num1 = this.evaluationStack.pop();
-        double num2 = this.evaluationStack.pop();
-        return num1 * num2;
+        double num1;
+        double num2;
+        if (this.evaluationStack.size() == 1) {
+            num1 = this.evaluationStack.pop();
+            return num1;
+        } else {
+            num1 = this.evaluationStack.pop();
+            num2 = this.evaluationStack.pop();
+            return num1 * num2;
+        }
     }
 
     private double divide() {
@@ -172,8 +186,8 @@ public class LispExpressionEvaluator {
         double num2 = this.evaluationStack.pop();
         if (this.evaluationStack.size() == 1) {
             return (1 / this.evaluationStack.pop());
-//        } else if (evaluationStack.empty()) {
-//            throw new LispExpressionEvaluatorException("Empty stack");
+        } else if (evaluationStack.empty()) {
+            throw new LispExpressionEvaluatorException("Empty stack");
         } else {
             if (num2 == 0) {
                 throw new ArithmeticException("Division by 0");
