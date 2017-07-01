@@ -151,18 +151,19 @@ public class LispExpressionEvaluator {
 //                    num1 = add(num1, num2);
 //                }
 //                result = num1;
-                add();
+                result = add();
                 break;
             case "-":
-                subtract();
+                result = subtract();
                 break;
             case "*":
-                multiply();
+                result = multiply();
                 break;
             case "/":
-                divide();
+                result = divide();
                 break;
         }
+        inputExprStack.push(result);
     }
 
     private double add() {
@@ -192,8 +193,8 @@ public class LispExpressionEvaluator {
         double num2 = evaluationStack.pop();
         if (evaluationStack.size() == 1) {
             return (1 / evaluationStack.pop());
-        } else if (evaluationStack.empty()) {
-            throw new LispExpressionEvaluatorException("Empty stack");
+//        } else if (evaluationStack.empty()) {
+//            throw new LispExpressionEvaluatorException("Empty stack");
         } else {
             if (num2 == 0) {
                 throw new ArithmeticException("Division by 0");
