@@ -122,48 +122,7 @@ public class LispExpressionEvaluator {
     //
     private void evaluateCurrentOperation() {
         // add statements
-        Double result = null;
-        boolean isNum = false;
-        String operation;
 
-        if (this.inputExprStack.empty()) {
-            throw new LispExpressionEvaluatorException("Input expression is empty");
-        }
-
-        do {
-            operation = (String.valueOf(this.inputExprStack.pop()));
-            try {
-                Double value = new Double(operation);
-                this.evaluationStack.push(value);
-            } catch (NumberFormatException e) {
-                isNum = true;
-            }
-        } while (!isNum);
-
-        double num1;
-        double num2;
-
-        switch (operation) {
-            case "+":
-//                num1 = this.evaluationStack.pop();
-//                while (!this.evaluationStack.empty()) {
-//                    num2 = this.evaluationStack.pop();
-//                    num1 = add(num1, num2);
-//                }
-//                result = num1;
-                result = add();
-                break;
-            case "-":
-                result = subtract();
-                break;
-            case "*":
-                result = multiply();
-                break;
-            case "/":
-                result = divide();
-                break;
-        }
-        this.inputExprStack.push(result);
     }
 
     private double add() {
@@ -260,7 +219,7 @@ public class LispExpressionEvaluator {
                             inputExprStack.push(nextItem);
                         } else if (nextItem == '*') {
                             inputExprStack.push(nextItem);
-                        } else if (nextItem == '/') {
+                        } else {
                             inputExprStack.push(nextItem);
                         }
                         break;
