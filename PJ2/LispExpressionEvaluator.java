@@ -123,10 +123,10 @@ public class LispExpressionEvaluator {
     private void evaluateCurrentOperation() {
         // add statements
         while (this.inputExprStack.peek().getClass().getName().equals("java.lang.Double")) {
-            this.evaluationStack.push((Double) inputExprStack.pop());
+            this.evaluationStack.push((Double) this.inputExprStack.pop());
         }
         Double result = null;
-        Character operation = (Character) inputExprStack.pop();
+        Character operation = (Character) this.inputExprStack.pop();
         
         switch (operation) {
             case '+':
@@ -142,6 +142,7 @@ public class LispExpressionEvaluator {
                 result = divide();
                 break;
         }
+        this.inputExprStack.push(result);
     }
 
     private double add() {
@@ -218,7 +219,7 @@ public class LispExpressionEvaluator {
                 // This force scanner to grab all of the digits
                 // Otherwise, it will just get one char
                 String dataString = inputExprScanner.findInLine("\\d+");
-                inputExprStack.push(new Double(dataString));
+                this.inputExprStack.push(new Double(dataString));
                 // more ...
             } else {
                 // Get next token, only one char in string token
@@ -233,13 +234,13 @@ public class LispExpressionEvaluator {
                         nextItem = nextToken.charAt(0);
                         // Step 4: If you see an operator, push operator object onto the inputExprStack
                         if (nextItem == '+') {
-                            inputExprStack.push(nextItem);
+                            this.inputExprStack.push(nextItem);
                         } else if (nextItem == '-') {
-                            inputExprStack.push(nextItem);
+                            this.inputExprStack.push(nextItem);
                         } else if (nextItem == '*') {
-                            inputExprStack.push(nextItem);
+                            this.inputExprStack.push(nextItem);
                         } else {
-                            inputExprStack.push(nextItem);
+                            this.inputExprStack.push(nextItem);
                         }
                         break;
                     // Step 5: If you see ")" steps in evaluateCurrentOperation()
