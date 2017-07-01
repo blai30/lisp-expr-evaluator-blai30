@@ -219,7 +219,7 @@ public class LispExpressionEvaluator {
                 // This force scanner to grab all of the digits
                 // Otherwise, it will just get one char
                 String dataString = inputExprScanner.findInLine("\\d+");
-                this.inputExprStack.push(new Double(dataString));
+                this.inputExprStack.push(Double.parseDouble(dataString));
                 // more ...
             } else {
                 // Get next token, only one char in string token
@@ -261,7 +261,7 @@ public class LispExpressionEvaluator {
         //         is the result of the expression.
         //
         //         return result
-        double result = new Double(inputExpr);
+        double result = (Double) this.inputExprStack.pop();
         return result;
     }
 
