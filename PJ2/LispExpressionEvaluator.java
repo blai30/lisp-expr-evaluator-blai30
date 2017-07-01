@@ -151,7 +151,11 @@ public class LispExpressionEvaluator
         
         switch (operation) {
             case "+":
-                
+                num1 = evaluationStack.pop();
+                while (!evaluationStack.empty()) {
+                    num2 = evaluationStack.pop();
+                    num1 = add(num1, num2);
+                }
                 break;
         }
     }
