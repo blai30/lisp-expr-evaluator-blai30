@@ -251,7 +251,17 @@ public class LispExpressionEvaluator {
                 switch (item) {
                     // Step 3: If you see "(", next token should be an operator
                     case '(':
-                        
+                        nextToken = inputExprScanner.next();
+                        nextItem = nextToken.charAt(0);
+                        if (nextItem == '+') {
+                            inputExprStack.push(nextItem);
+                        } else if (nextItem == '-') {
+                            inputExprStack.push(nextItem);
+                        } else if (nextItem == '*') {
+                            inputExprStack.push(nextItem);
+                        } else if (nextItem == '/') {
+                            inputExprStack.push(nextItem);
+                        }
                     // Step 4: If you see an operator, push operator object onto the inputExprStack
                     // Step 5: If you see ")"  // steps in evaluateCurrentOperation() :
                     default:  // error
