@@ -176,6 +176,15 @@ public class LispExpressionEvaluator
         double num2 = evaluationStack.pop();
         return num1 + num2;
     }
+    
+    private double subtract() {
+        if (evaluationStack.size() == 1) {
+            return -evaluationStack.pop();
+        }
+        double num1 = evaluationStack.pop();
+        double num2 = evaluationStack.pop();
+        return num2 - num1;
+    }
 
     /**
      * This function evaluates current Lisp expression in inputExpr
