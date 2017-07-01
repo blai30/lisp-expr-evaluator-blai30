@@ -246,9 +246,12 @@ public class LispExpressionEvaluator {
                 // Get next token, only one char in string token
                 String aToken = inputExprScanner.next();
                 char item = aToken.charAt(0);
-
+                String nextToken;
+                char nextItem;
                 switch (item) {
-                    // Step 3: If you see "(", next token shoube an operator
+                    // Step 3: If you see "(", next token should be an operator
+                    case '(':
+                        
                     // Step 4: If you see an operator, push operator object onto the inputExprStack
                     // Step 5: If you see ")"  // steps in evaluateCurrentOperation() :
                     default:  // error
