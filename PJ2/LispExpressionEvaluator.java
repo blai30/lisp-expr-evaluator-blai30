@@ -281,7 +281,8 @@ public class LispExpressionEvaluator {
         //         is the result of the expression.
         //
         //         return result
-        return 0.0;
+        double result = new Double(inputExpr);
+        return result;
     }
 
     //=====================================================================
