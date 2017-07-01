@@ -160,6 +160,12 @@ public class LispExpressionEvaluator
                 break;
         }
     }
+    
+    private double add(double value1, double value2) {
+        value1 = evaluationStack.pop();
+        value2 = evaluationStack.pop();
+        return value1 + value2;
+    }
 
     /**
      * This function evaluates current Lisp expression in inputExpr
