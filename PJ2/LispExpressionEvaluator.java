@@ -205,8 +205,8 @@ public class LispExpressionEvaluator {
     }
     
     /**
-     * This function evaluates current Lisp expression in inputExpr It return
-     * result of the expression
+     * This function evaluates current Lisp expression in inputExpr
+     * It return result of the expression
      *
      * The algorithm:
      *
