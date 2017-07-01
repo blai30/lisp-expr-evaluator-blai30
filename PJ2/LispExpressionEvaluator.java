@@ -210,15 +210,15 @@ public class LispExpressionEvaluator {
      *
      * The algorithm:
      *
-     * Step 1 Scan the tokens in the string. Step 2	If you see an operand, push
-     * operand object onto the inputExprStack Step 3 If you see "(", next token
-     * should be an operator Step 4 If you see an operator, push operator object
-     * onto the inputExprStack Step 5	If you see ")" // steps in
-     * evaluateCurrentOperation() : Step 6	Pop operands and push them onto
-     * evaluationStack until you find an operator Step 7	Apply the operator to
-     * the operands on evaluationStack Step 8	Push the result into
-     * inputExprStack Step 9 If you run out of tokens, the value on the top of
-     * inputExprStack is is the result of the expression.
+     * Step 1 Scan the tokens in the string.
+     * Step 2 If you see an operand, push operand object onto the inputExprStack
+     * Step 3 If you see "(", next token should be an operator
+     * Step 4 If you see an operator, push operator object onto the inputExprStack
+     * Step 5 If you see ")" // steps in evaluateCurrentOperation() : 
+     * Step 6 Pop operands and push them onto evaluationStack until you find an operator
+     * Step 7 Apply the operator to the operands on evaluationStack
+     * Step 8 Push the result into inputExprStack
+     * Step 9 If you run out of tokens, the value on the top of inputExprStack is is the result of the expression.
      */
     public double evaluate() {
         // only outline is given...
