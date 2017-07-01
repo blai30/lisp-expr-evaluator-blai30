@@ -156,6 +156,9 @@ public class LispExpressionEvaluator {
 
     private double subtract() {
         double result = this.evaluationStack.pop();
+        if (this.evaluationStack.empty()) {
+            return -result;
+        }
         while (!this.evaluationStack.empty()) {
             double operand = this.evaluationStack.pop();
             result -= operand;
@@ -173,19 +176,12 @@ public class LispExpressionEvaluator {
     }
 
     private double divide() {
-        double num1 = this.evaluationStack.pop();
-        double num2 = this.evaluationStack.pop();
-        if (this.evaluationStack.size() == 1) {
-            return (1 / this.evaluationStack.pop());
-        } else if (evaluationStack.empty()) {
-            throw new LispExpressionEvaluatorException("Empty stack");
-        } else {
-            if (num2 == 0) {
-                throw new ArithmeticException("Division by 0");
-            } else {
-                return num1 / num2;
-            }
+        double result = this.evaluationStack.pop();
+        while (!this.evaluationStack.empty()) {
+            double operand = this.evaluationStack.pop();
+            result /= operand;
         }
+        return result;
     }
     
     /**
