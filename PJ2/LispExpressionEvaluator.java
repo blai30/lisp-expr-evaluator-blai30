@@ -133,7 +133,7 @@ public class LispExpressionEvaluator {
         do {
             operation = (String.valueOf(this.inputExprStack.pop()));
             try {
-                Double value = Double.parseDouble(operation);
+                Double value = new Double(operation);
                 this.evaluationStack.push(value);
             } catch (NumberFormatException e) {
                 isNum = true;
@@ -240,7 +240,7 @@ public class LispExpressionEvaluator {
                 // This force scanner to grab all of the digits
                 // Otherwise, it will just get one char
                 String dataString = inputExprScanner.findInLine("\\d+");
-
+                inputExprStack.push(new Double(dataString));
                 // more ...
             } else {
                 // Get next token, only one char in string token
