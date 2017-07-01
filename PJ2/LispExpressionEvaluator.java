@@ -128,10 +128,26 @@ public class LispExpressionEvaluator
     private void evaluateCurrentOperation()
     {
 	// add statements
+        Double result = null;
+        boolean isNum = false;
+        String op;
         if (inputExprStack.empty()) {
             throw new LispExpressionEvaluatorException("Input expression is empty");
         }
-        
+        do {
+            op = (String.valueOf(inputExprStack.pop()));
+            try {
+                Double value = Double.parseDouble(op);
+                evaluationStack.push(value);
+            } catch (NumberFormatException e) {
+                isNum = true;
+            }
+        } while (!isNum);
+        switch (op) {
+            case '+':
+                
+                break;
+        }
     }
 
     /**
