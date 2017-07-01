@@ -253,6 +253,7 @@ public class LispExpressionEvaluator {
                     case '(':
                         nextToken = inputExprScanner.next();
                         nextItem = nextToken.charAt(0);
+                        // Step 4: If you see an operator, push operator object onto the inputExprStack
                         if (nextItem == '+') {
                             inputExprStack.push(nextItem);
                         } else if (nextItem == '-') {
@@ -262,8 +263,14 @@ public class LispExpressionEvaluator {
                         } else if (nextItem == '/') {
                             inputExprStack.push(nextItem);
                         }
-                    // Step 4: If you see an operator, push operator object onto the inputExprStack
-                    // Step 5: If you see ")"  // steps in evaluateCurrentOperation() :
+                        break;
+                    // Step 5: If you see ")" steps in evaluateCurrentOperation()
+                    case ')':
+                        try {
+                            evaluateCurrentOperation();
+                        } catch (EmptyStackException e) {
+                            break;
+                        }
                     default:  // error
                         throw new LispExpressionEvaluatorException(item + " is not a legal expression operator");
                 } // end switch
