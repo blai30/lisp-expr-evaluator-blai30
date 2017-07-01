@@ -146,39 +146,30 @@ public class LispExpressionEvaluator {
     }
 
     private double add() {
-        double num1;
-        double num2;
-        if (this.evaluationStack.size() == 1) {
-            num1 = this.evaluationStack.pop();
-            return num1;
-        } else {
-            num1 = this.evaluationStack.pop();
-            num2 = this.evaluationStack.pop();
-            return num1 + num2;
+        double result = this.evaluationStack.pop();
+        while (!this.evaluationStack.empty()) {
+            double operand = this.evaluationStack.pop();
+            result += operand;
         }
+        return result;
     }
 
     private double subtract() {
-        if (this.evaluationStack.size() == 1) {
-            return -this.evaluationStack.pop();
-        } else {
-            double num1 = this.evaluationStack.pop();
-            double num2 = this.evaluationStack.pop();
-            return num1 - num2;
+        double result = this.evaluationStack.pop();
+        while (!this.evaluationStack.empty()) {
+            double operand = this.evaluationStack.pop();
+            result -= operand;
         }
+        return result;
     }
 
     private double multiply() {
-        double num1;
-        double num2;
-        if (this.evaluationStack.size() == 1) {
-            num1 = this.evaluationStack.pop();
-            return num1;
-        } else {
-            num1 = this.evaluationStack.pop();
-            num2 = this.evaluationStack.pop();
-            return num1 * num2;
+        double result = this.evaluationStack.pop();
+        while (!this.evaluationStack.empty()) {
+            double operand = this.evaluationStack.pop();
+            result *= operand;
         }
+        return result;
     }
 
     private double divide() {
