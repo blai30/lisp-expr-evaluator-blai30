@@ -156,6 +156,7 @@ public class LispExpressionEvaluator
                     num2 = evaluationStack.pop();
                     num1 = add(num1, num2);
                 }
+                result = num1;
                 break;
         }
     }
