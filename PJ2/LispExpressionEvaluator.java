@@ -126,15 +126,15 @@ public class LispExpressionEvaluator {
         boolean isNum = false;
         String operation;
 
-        if (inputExprStack.empty()) {
+        if (this.inputExprStack.empty()) {
             throw new LispExpressionEvaluatorException("Input expression is empty");
         }
 
         do {
-            operation = (String.valueOf(inputExprStack.pop()));
+            operation = (String.valueOf(this.inputExprStack.pop()));
             try {
                 Double value = Double.parseDouble(operation);
-                evaluationStack.push(value);
+                this.evaluationStack.push(value);
             } catch (NumberFormatException e) {
                 isNum = true;
             }
@@ -145,9 +145,9 @@ public class LispExpressionEvaluator {
 
         switch (operation) {
             case "+":
-//                num1 = evaluationStack.pop();
-//                while (!evaluationStack.empty()) {
-//                    num2 = evaluationStack.pop();
+//                num1 = this.evaluationStack.pop();
+//                while (!this.evaluationStack.empty()) {
+//                    num2 = this.evaluationStack.pop();
 //                    num1 = add(num1, num2);
 //                }
 //                result = num1;
@@ -163,36 +163,36 @@ public class LispExpressionEvaluator {
                 result = divide();
                 break;
         }
-        inputExprStack.push(result);
+        this.inputExprStack.push(result);
     }
 
     private double add() {
-        double num1 = evaluationStack.pop();
-        double num2 = evaluationStack.pop();
+        double num1 = this.evaluationStack.pop();
+        double num2 = this.evaluationStack.pop();
         return num1 + num2;
     }
 
     private double subtract() {
-        if (evaluationStack.size() == 1) {
-            return -evaluationStack.pop();
+        if (this.evaluationStack.size() == 1) {
+            return -this.evaluationStack.pop();
         } else {
-            double num1 = evaluationStack.pop();
-            double num2 = evaluationStack.pop();
+            double num1 = this.evaluationStack.pop();
+            double num2 = this.evaluationStack.pop();
             return num1 - num2;
         }
     }
 
     private double multiply() {
-        double num1 = evaluationStack.pop();
-        double num2 = evaluationStack.pop();
+        double num1 = this.evaluationStack.pop();
+        double num2 = this.evaluationStack.pop();
         return num1 * num2;
     }
 
     private double divide() {
-        double num1 = evaluationStack.pop();
-        double num2 = evaluationStack.pop();
-        if (evaluationStack.size() == 1) {
-            return (1 / evaluationStack.pop());
+        double num1 = this.evaluationStack.pop();
+        double num2 = this.evaluationStack.pop();
+        if (this.evaluationStack.size() == 1) {
+            return (1 / this.evaluationStack.pop());
 //        } else if (evaluationStack.empty()) {
 //            throw new LispExpressionEvaluatorException("Empty stack");
         } else {
