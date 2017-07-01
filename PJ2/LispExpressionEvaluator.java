@@ -177,6 +177,9 @@ public class LispExpressionEvaluator {
 
     private double divide() {
         double result = this.evaluationStack.pop();
+        if (this.evaluationStack.empty()) {
+            result = 1 / result;
+        }
         while (!this.evaluationStack.empty()) {
             double operand = this.evaluationStack.pop();
             result /= operand;
