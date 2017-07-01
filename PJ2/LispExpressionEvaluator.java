@@ -181,6 +181,28 @@ public class LispExpressionEvaluator {
         }
     }
 
+    private double multiply() {
+        double num1 = evaluationStack.pop();
+        double num2 = evaluationStack.pop();
+        return num1 * num2;
+    }
+
+    private double divide() {
+        double num1 = evaluationStack.pop();
+        double num2 = evaluationStack.pop();
+        if (evaluationStack.size() == 1) {
+            return (1 / evaluationStack.pop());
+        } else if (evaluationStack.empty()) {
+            throw new LispExpressionEvaluatorException("Empty stack");
+        } else {
+            if (num2 == 0) {
+                throw new ArithmeticException("Division by 0");
+            } else {
+                return num1 / num2;
+            }
+        }
+    }
+    
     /**
      * This function evaluates current Lisp expression in inputExpr It return
      * result of the expression
