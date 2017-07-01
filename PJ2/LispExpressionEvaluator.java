@@ -122,7 +122,26 @@ public class LispExpressionEvaluator {
     //
     private void evaluateCurrentOperation() {
         // add statements
-
+        while (this.inputExprStack.peek().getClass().getName().equals("java.lang.Double")) {
+            this.evaluationStack.push((Double) inputExprStack.pop());
+        }
+        Double result = null;
+        Character operation = (Character) inputExprStack.pop();
+        
+        switch (operation) {
+            case '+':
+                result = add();
+                break;
+            case '-':
+                result = subtract();
+                break;
+            case '*':
+                result = multiply();
+                break;
+            case '/':
+                result = divide();
+                break;
+        }
     }
 
     private double add() {
