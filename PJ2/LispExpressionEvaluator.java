@@ -151,20 +151,30 @@ public class LispExpressionEvaluator
         
         switch (operation) {
             case "+":
-                num1 = evaluationStack.pop();
-                while (!evaluationStack.empty()) {
-                    num2 = evaluationStack.pop();
-                    num1 = add(num1, num2);
-                }
-                result = num1;
+//                num1 = evaluationStack.pop();
+//                while (!evaluationStack.empty()) {
+//                    num2 = evaluationStack.pop();
+//                    num1 = add(num1, num2);
+//                }
+//                result = num1;
+                add();
+                break;
+            case "-":
+                subtract();
+                break;
+            case "*":
+                multiply();
+                break;
+            case "/":
+                divide();
                 break;
         }
     }
     
-    private double add(double value1, double value2) {
-        value1 = evaluationStack.pop();
-        value2 = evaluationStack.pop();
-        return value1 + value2;
+    private double add() {
+        double num1 = evaluationStack.pop();
+        double num2 = evaluationStack.pop();
+        return num1 + num2;
     }
 
     /**
