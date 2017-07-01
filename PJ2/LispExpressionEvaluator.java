@@ -137,7 +137,7 @@ public class LispExpressionEvaluator
         do {
             operation = (String.valueOf(inputExprStack.pop()));
             try {
-                Double value = Double.parseDouble(op);
+                Double value = Double.parseDouble(operation);
                 evaluationStack.push(value);
             } catch (NumberFormatException e) {
                 isNum = true;
