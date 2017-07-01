@@ -130,12 +130,12 @@ public class LispExpressionEvaluator
 	// add statements
         Double result = null;
         boolean isNum = false;
-        String op;
+        String operation;
         if (inputExprStack.empty()) {
             throw new LispExpressionEvaluatorException("Input expression is empty");
         }
         do {
-            op = (String.valueOf(inputExprStack.pop()));
+            operation = (String.valueOf(inputExprStack.pop()));
             try {
                 Double value = Double.parseDouble(op);
                 evaluationStack.push(value);
@@ -143,7 +143,7 @@ public class LispExpressionEvaluator
                 isNum = true;
             }
         } while (!isNum);
-        switch (op) {
+        switch (operation) {
             case '+':
                 
                 break;
