@@ -122,11 +122,21 @@ public class LispExpressionEvaluator {
     //
     private void evaluateCurrentOperation() {
         // add statements
+        if (inputExprStack.empty()) {
+            throw new LispExpressionEvaluatorException("Empty stack");
+        }
+        
         while (this.inputExprStack.peek().getClass().getName().equals("java.lang.Double")) {
             this.evaluationStack.push((Double) this.inputExprStack.pop());
         }
         Double result = null;
         Character operation = (Character) this.inputExprStack.pop();
+        
+        if (!evaluationStack.empty()) {
+            
+        } else {
+            throw new LispExpressionEvaluatorException("Missing operand(s)");
+        }
         
         switch (operation) {
             case '+':
