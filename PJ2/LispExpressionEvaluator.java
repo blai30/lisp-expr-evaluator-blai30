@@ -132,9 +132,7 @@ public class LispExpressionEvaluator {
         Double result = null;
         Character operation = (Character) this.inputExprStack.pop();
         
-        if (!evaluationStack.empty()) {
-            
-        } else {
+        if (evaluationStack.empty()) {
             throw new LispExpressionEvaluatorException("Missing operand(s)");
         }
         
