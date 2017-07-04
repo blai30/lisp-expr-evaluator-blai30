@@ -207,7 +207,7 @@ public class LispExpressionEvaluator {
         // only outline is given...
         // you need to add statements/local variables
         // you may delete or modify any statements in this method
-
+        int parenCount = 0;
         // use scanner to tokenize inputExpr
         Scanner inputExprScanner = new Scanner(inputExpr);
 
@@ -234,6 +234,7 @@ public class LispExpressionEvaluator {
                 switch (item) {
                     // Step 3: If you see "(", next token should be an operator
                     case '(':
+                        parenCount++;
                         nextToken = inputExprScanner.next();
                         nextItem = nextToken.charAt(0);
                         // Step 4: If you see an operator, push operator object onto the inputExprStack
@@ -250,6 +251,7 @@ public class LispExpressionEvaluator {
                     // Step 5: If you see ")" steps in evaluateCurrentOperation()
                     case ')':
                         try {
+                            parenCount--;
                             evaluateCurrentOperation();
                         } catch (EmptyStackException e) {
                             break;
@@ -265,10 +267,17 @@ public class LispExpressionEvaluator {
         //         is the result of the expression.
         //
         //         return result
+        checkParenCount(parenCount);
         double result = (Double) this.inputExprStack.pop();
         return result;
     }
-
+    
+    private void checkParenCount(int parenCount) {
+        if (parenCount != 0) {
+            throw new LispExpressionEvaluatorException("Parenthesis count error");
+        }
+    }
+    
     //=====================================================================
     // DO NOT MODIFY ANY STATEMENTS BELOW
     //=====================================================================
