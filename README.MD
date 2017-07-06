@@ -27,3 +27,4 @@ CSC220 Programming Project #2
   // Run main test program
   java PJ2_Test
 
+EC ALLOWED
