@@ -54,7 +54,10 @@ public class StackClass<T> implements StackInterface {
 
     @Override
     public T peek() {
-        
+        if (!this.empty()) {
+            return this.items[this.numItems-1];
+        }
+        return null;
     }
 
     @Override
