@@ -17,7 +17,7 @@ public interface StackInterface<T> {
     
     public T peek();
     
-    public boolean isEmpty();
+    public boolean empty();
     
     public int search(T entry);
     

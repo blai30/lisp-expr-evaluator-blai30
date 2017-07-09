@@ -68,7 +68,7 @@
  ************************************************************************************ */
 package PJ2;
 
-import java.util.*;
+// import java.util.*;
 
 public class LispExpressionEvaluator {
 
@@ -76,8 +76,8 @@ public class LispExpressionEvaluator {
     private String inputExpr;
 
     // Main expression stack & current operation stack
-    private Stack<Object> inputExprStack;
-    private Stack<Double> evaluationStack;
+    private StackClass<Object> inputExprStack;
+    private StackClass<Double> evaluationStack;
 
     // default constructor
     // set inputExpr to "" 
@@ -85,8 +85,8 @@ public class LispExpressionEvaluator {
     public LispExpressionEvaluator() {
         // add statements
         this.inputExpr = "";
-        this.inputExprStack = new Stack<>();
-        this.evaluationStack = new Stack<>();
+        this.inputExprStack = new StackClass<>();
+        this.evaluationStack = new StackClass<>();
     }
 
     // constructor with an input expression 
@@ -98,8 +98,8 @@ public class LispExpressionEvaluator {
             throw new LispExpressionEvaluatorException();
         }
         this.inputExpr = inputExpression;
-        this.inputExprStack = new Stack<>();
-        this.evaluationStack = new Stack<>();
+        this.inputExprStack = new StackClass<>();
+        this.evaluationStack = new StackClass<>();
     }
 
     // set inputExpr to inputExpression 

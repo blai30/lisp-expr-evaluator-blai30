@@ -43,7 +43,7 @@ public class StackClass<T> implements StackInterface {
     
     @Override
     public T pop() {
-        if (this.isEmpty()) {
+        if (this.empty()) {
             return null;
         }
         T removing = this.items[this.numItems-1];
@@ -58,7 +58,7 @@ public class StackClass<T> implements StackInterface {
     }
 
     @Override
-    public boolean isEmpty() {
+    public boolean empty() {
         return this.numItems == 0;
     }
 
@@ -74,7 +74,7 @@ public class StackClass<T> implements StackInterface {
 
     @Override
     public void clear() {
-        while (!this.isEmpty()) {
+        while (!this.empty()) {
             this.pop();
         }
     }
