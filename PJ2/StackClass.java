@@ -22,7 +22,8 @@ public class StackClass<T> implements StackInterface {
     
     public StackClass(int cap) {
         this.items = (T []) new Object[StackClass.INITIAL_CAP];
-        
+        this.numItems = 0;
+        this.currentCap = cap;
     }
 
     @Override
@@ -42,7 +43,7 @@ public class StackClass<T> implements StackInterface {
 
     @Override
     public boolean isEmpty() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.numItems == 0;
     }
 
     @Override
