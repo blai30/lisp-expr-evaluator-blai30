@@ -42,7 +42,7 @@ public class StackClass<T> implements StackInterface {
     }
     
     @Override
-    public Object pop() {
+    public T pop() {
         if (this.isEmpty()) {
             return null;
         }
@@ -50,7 +50,7 @@ public class StackClass<T> implements StackInterface {
     }
 
     @Override
-    public Object peek() {
+    public T peek() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
