@@ -9,6 +9,6 @@ package PJ2;
  *
  * @author Brian
  */
-public interface StackInterface {
+public interface StackInterface<T> {
     
 }
