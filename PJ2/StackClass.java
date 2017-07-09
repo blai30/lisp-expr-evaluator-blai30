@@ -34,10 +34,19 @@ public class StackClass<T> implements StackInterface {
         this.items[this.numItems] = (T) newEntry;
         this.numItems++;
     }
-
+    
+    private void expand() {
+        T[] expansion = (T[]) new Object[this.currentCap+25];
+        System.arraycopy(this.items, 0, expansion, 0, this.numItems);
+        this.items = expansion;
+    }
+    
     @Override
     public Object pop() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (this.isEmpty()) {
+            return null;
+        }
+        
     }
 
     @Override
