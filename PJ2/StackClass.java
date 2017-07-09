@@ -46,7 +46,9 @@ public class StackClass<T> implements StackInterface {
         if (this.isEmpty()) {
             return null;
         }
-        
+        T removing = this.items[this.numItems-1];
+        this.items[this.numItems-1] = null;
+        return removing;
     }
 
     @Override
