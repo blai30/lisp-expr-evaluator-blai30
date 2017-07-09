@@ -48,12 +48,13 @@ public class StackClass<T> implements StackInterface {
         }
         T removing = this.items[this.numItems-1];
         this.items[this.numItems-1] = null;
+        this.numItems--;
         return removing;
     }
 
     @Override
     public T peek() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
@@ -63,12 +64,12 @@ public class StackClass<T> implements StackInterface {
 
     @Override
     public int search(Object entry) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void clear() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
 }
