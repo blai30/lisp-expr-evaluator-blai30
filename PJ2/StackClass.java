@@ -10,6 +10,20 @@ package PJ2;
  * @author Brian
  */
 public class StackClass<T> implements StackInterface {
+    
+    private T[] items;
+    private int numItems;
+    private int currentCap;
+    private static final int INITIAL_CAP = 25;
+    
+    public StackClass() {
+        this(INITIAL_CAP);
+    }
+    
+    public StackClass(int cap) {
+        this.items = (T []) new Object[StackClass.INITIAL_CAP];
+        
+    }
 
     @Override
     public void push(Object newEntry) {
