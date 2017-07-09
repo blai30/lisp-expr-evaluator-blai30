@@ -7,7 +7,7 @@ package PJ2;
 
 /**
  *
- * @author Brian
+ * @author Brian Lai
  */
 public class StackClass<T> implements StackInterface {
     
@@ -64,7 +64,12 @@ public class StackClass<T> implements StackInterface {
 
     @Override
     public int search(Object entry) {
-        
+        for (int i = this.numItems-1; i > -1; i--) {
+            if (this.items[i].equals(entry)) {
+                return this.numItems - i;
+            }
+        }
+        return -1;
     }
 
     @Override

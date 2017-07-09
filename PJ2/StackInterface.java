@@ -7,7 +7,7 @@ package PJ2;
 
 /**
  *
- * @author Brian
+ * @author Brian Lai
  */
 public interface StackInterface<T> {
     
