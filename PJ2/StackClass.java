@@ -28,7 +28,11 @@ public class StackClass<T> implements StackInterface {
 
     @Override
     public void push(Object newEntry) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (this.numItems == this.currentCap) {
+            this.expand();
+        }
+        this.items[this.numItems] = (T) newEntry;
+        this.numItems++;
     }
 
     @Override
