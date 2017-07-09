@@ -65,15 +65,15 @@ public class StackClass<T> implements StackInterface {
         return this.numItems == 0;
     }
 
-    @Override
-    public int search(Object entry) {
-        for (int i = this.numItems-1; i > -1; i--) {
-            if (this.items[i].equals(entry)) {
-                return this.numItems - i;
-            }
-        }
-        return -1;
-    }
+//    @Override
+//    public int search(Object entry) {
+//        for (int i = this.numItems-1; i > -1; i--) {
+//            if (this.items[i].equals(entry)) {
+//                return this.numItems - i;
+//            }
+//        }
+//        return -1;
+//    }
 
     @Override
     public void clear() {

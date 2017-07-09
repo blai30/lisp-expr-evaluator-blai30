@@ -19,7 +19,7 @@ public interface StackInterface<T> {
     
     public boolean empty();
     
-    public int search(T entry);
+//    public int search(T entry);
     
     public void clear();
     
