@@ -69,7 +69,9 @@ public class StackClass<T> implements StackInterface {
 
     @Override
     public void clear() {
-        
+        while (!this.isEmpty()) {
+            this.pop();
+        }
     }
     
 }
