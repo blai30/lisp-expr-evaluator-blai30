@@ -265,6 +265,9 @@ public class LispExpressionEvaluator {
                         break;
                     // Step 5: If you see ")" steps in evaluateCurrentOperation()
                     case ')':
+                        if (inputExprStack.size() < 2) {
+                            throw new LispExpressionEvaluatorException();
+                        }
                         try {
                             parenCount--;
                             evaluateCurrentOperation();

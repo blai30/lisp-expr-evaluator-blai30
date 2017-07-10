@@ -81,5 +81,9 @@ public class StackClass<T> implements StackInterface {
             this.pop();
         }
     }
+
+    public int size() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
