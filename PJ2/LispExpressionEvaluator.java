@@ -266,7 +266,7 @@ public class LispExpressionEvaluator {
                     // Step 5: If you see ")" steps in evaluateCurrentOperation()
                     case ')':
                         if (inputExprStack.size() < 2) {
-                            throw new LispExpressionEvaluatorException();
+                            throw new LispExpressionEvaluatorException("Paranthesis count error");
                         }
                         try {
                             parenCount--;
