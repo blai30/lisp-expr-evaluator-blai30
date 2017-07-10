@@ -82,6 +82,7 @@ public class StackClass<T> implements StackInterface {
         }
     }
 
+    @Override
     public int size() {
         return this.numItems;
     }

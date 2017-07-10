@@ -23,4 +23,5 @@ public interface StackInterface<T> {
     
     public void clear();
     
+    public int size();
 }
