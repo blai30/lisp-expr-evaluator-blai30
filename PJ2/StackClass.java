@@ -14,7 +14,7 @@ public class StackClass<T> implements StackInterface {
     private T[] items;
     private int numItems;
     private int currentCap;
-    private static final int INITIAL_CAP = 25;
+    private static int INITIAL_CAP = 25;
     
     public StackClass() {
         this(INITIAL_CAP);
